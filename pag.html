@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Roda da Vida · Sustentabilidade para todos</title>
+    <!-- Fonte bonita e amigável -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (ícones gratuitos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5fbf0;
+            font-family: 'Inter', sans-serif;
+            color: #1d3e1a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* cabeçalho inspirador */
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 2rem 1rem;
+            background: #eaf5e3;
+            border-radius: 3rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #2c6b2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 i {
+            color: #4c9e4c;
+            font-size: 2.4rem;
+            margin-right: 8px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #2c5428;
+            max-width: 650px;
+            margin: 0.5rem auto 0;
+        }
+
+        .frase-impacto {
+            margin-top: 1.2rem;
+            font-style: italic;
+            font-weight: 500;
+            background: #ffffffb3;
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* seção dos 7Ws só com conteúdo amigável (porque/quem/onde etc de forma suave) */
+        .missao-box {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 18px rgba(70, 100, 40, 0.05);
+            border: 1px solid #ddecd2;
+        }
+
+        .titulo-carinhoso {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d6a2d;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 5px solid #69a84b;
+            padding-left: 1rem;
+        }
+
+        .grid-motivos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card-motivo {
+            background: #fefef7;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            transition: 0.2s;
+            border: 1px solid #e0f0d6;
+        }
+
+        .card-motivo i {
+            font-size: 2rem;
+            color: #468a3c;
+            margin-bottom: 0.7rem;
+        }
+
+        .card-motivo h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Área principal: dicas ecológicas e textos curtos */
+        .dicas-principal {
+            background: #ffffffea;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .galeria-dicas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .card-dica {
+            flex: 1;
+            min-width: 240px;
+            background: #fefef5;
+            border-radius: 1.5rem;
+            padding: 1.6rem;
+            text-align: center;
+            transition: all 0.2s ease;
+            border: 1px solid #cde2c0;
+        }
+
+        .card-dica i {
+            font-size: 2.4rem;
+            background: #e6f2e0;
+            padding: 0.7rem;
+            border-radius: 60px;
+            color: #347a34;
+            margin-bottom: 1rem;
+        }
+
+        .card-dica h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #2a662a;
+        }
+
+        .card-dica p {
+            font-size: 0.95rem;
+            color: #2c4a27;
+        }
+
+        .selo-verde {
+            background: #e1f0d9;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 0.8rem;
+        }
+
+        /* citação consciente */
+        .citacao {
+            background: #eaf1e2;
+            padding: 1.5rem;
+            border-radius: 1.8rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #235b1e;
+        }
+
+        .citacao i {
+            font-size: 1.6rem;
+            margin: 0 6px;
+        }
+
+        /* inspiração extra: pequenas atitudes */
+        .acoes-simples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+        }
+        .bloco-acao {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            font-weight: 500;
+            border: 1px solid #cde0be;
+        }
+
+        .footer-verde {
+            text-align: center;
+            padding: 2rem 0.5rem 1rem;
+            border-top: 1px solid #cde2bd;
+            margin-top: 2rem;
+            color: #3f6737;
+            font-size: 0.9rem;
+        }
+
+        .btn-simbolico {
+            display: inline-block;
+            background: #3a7b3a;
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            transition: 0.2s;
+        }
+        .btn-simbolico:hover {
+            background: #266326;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .titulo-carinhoso {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Cabeçalho amigável / Roda da Vida -->
+    <div class="hero">
+        <h1><i class="fas fa-seedling"></i> Roda da Vida</h1>
+        <p>Educação ambiental que floresce no dia a dia</p>
+        <div class="frase-impacto">🌱 Textos curtos · Dicas verdes · Consumo consciente</div>
+    </div>
+
+    <!-- Resumo inspirador com os 7Ws de forma suave e sustentável (foco no propósito) -->
+    <div class="missao-box">
+        <div class="titulo-carinhoso">
+            <i class="fas fa-heart"></i> 
+            <span>Nosso propósito com a sustentabilidade</span>
+        </div>
+        <div class="grid-motivos">
+            <div class="card-motivo">
+                <i class="fas fa-leaf"></i>
+                <h3>O quê?</h3>
+                <p>Uma página viva com textos curtos, dicas e práticas ecológicas simples. Tudo para incentivar o consumo consciente e pequenos gestos que renovam o planeta.</p>
+            </div>
+            <div class="card-motivo">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Por quê?</h3>
+                <p>Promover educação ambiental acessível, inspirando a comunidade a adotar hábitos sustentáveis. Cuidar do mundo que vivemos — e das futuras gerações.</p>
+            </div>
+            <div class="card-motivo">
+                <i class="fas fa-users"></i>
+                <h3>Para quem?</h3>
+                <p>Para você, sua família, colegas, vizinhos. Todos que querem fazer a diferença com atitudes reais, em casa, na faculdade e nas redes sociais.</p>
+            </div>
+            <div class="card-motivo">
+                <i class="fas fa-seedling"></i>
+                <h3>Como fazemos?</h3>
+                <p>Com textos leves, positivos e exemplos práticos. Linguagem simples e inspiradora para que qualquer pessoa consiga aplicar no seu dia a dia.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem; font-size: 0.9rem; background: #eef3e8; border-radius: 50px; padding: 0.5rem;">
+            🌍 <strong>Onde?</strong> Em casa, na faculdade, nos grupos de WhatsApp e nas mídias sociais. <strong>Quando?</strong> Começamos agora, com duração de 3 meses de conteúdos e ideias que se renovam.
+        </div>
+    </div>
+
+    <!-- Página de textos curtos sobre sustentabilidade: dicas e mais dicas -->
+    <div class="dicas-principal">
+        <div class="titulo-carinhoso">
+            <i class="fas fa-pencil-alt"></i>
+            <span>📘 Textos curtos · Dicas que renovam o planeta</span>
+        </div>
+        <p style="margin-bottom: 1rem; font-size: 1rem;">Pequenas atitudes, grandes impactos. Inspire-se e compartilhe!</p>
+
+        <div class="galeria-dicas">
+            <div class="card-dica">
+                <i class="fas fa-recycle"></i>
+                <h4>Plástico, tchau!</h4>
+                <p>Troque as sacolas plásticas por ecobags ou mochilas. Use garrafa de água reutilizável. Se cada pessoa reduzir 100 plásticos por ano, o oceano agradece.</p>
+                <div class="selo-verde">#MenosPlástico</div>
+            </div>
+            <div class="card-dica">
+                <i class="fas fa-water"></i>
+                <h4>Água é vida</h4>
+                <p>Feche a torneira ao escovar os dentes. Banhos mais curtos economizam até 30 litros por dia. Aproveite a água da chuva para regar plantas.</p>
+                <div class="selo-verde">#ConsciênciaHídrica</div>
+            </div>
+            <div class="card-dica">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Energia com consciência</h4>
+                <p>Apague as luzes de ambientes vazios. Tire aparelhos da tomada quando não estiver usando. Prefira lâmpadas LED — duram mais e gastam menos.</p>
+                <div class="selo-verde">#EcoEnergia</div>
+            </div>
+            <div class="card-dica">
+                <i class="fas fa-apple-alt"></i>
+                <h4>Comida sem desperdício</h4>
+                <p>Aproveite talos, cascas e folhas em receitas criativas. Planeje a lista de compras e evite jogar comida fora. Composte restos orgânicos.</p>
+                <div class="selo-verde">#DesperdícioZero</div>
+            </div>
+        </div>
+
+        <!-- segunda linha de dicas extras -->
+        <div class="galeria-dicas" style="margin-top: 1rem;">
+            <div class="card-dica">
+                <i class="fas fa-bicycle"></i>
+                <h4>Mobilidade verde</h4>
+                <p>Prefira andar a pé, usar bicicleta ou transporte coletivo. Para distâncias curtas, caminhar faz bem pra saúde e pro clima.</p>
+                <div class="selo-verde">#ArPuro</div>
+            </div>
+            <div class="card-dica">
+                <i class="fas fa-tshirt"></i>
+                <h4>Moda sustentável</h4>
+                <p>Troque roupas com amigos, conserte o que tem e compre em brechós. A indústria tênis gera menos pegada ecológica quando reaproveitamos.</p>
+                <div class="selo-verde">#ModaConsciente</div>
+            </div>
+            <div class="card-dica">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4>Consumo consciente</h4>
+                <p>Antes de comprar, pergunte: “eu realmente preciso?”. Dê preferência a produtos locais e duráveis. Cada escolha impacta o sistema.</p>
+                <div class="selo-verde">#ComprasComPropósito</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="#" class="btn-simbolico" id="btnDicaExtra"><i class="fas fa-spa"></i> Quero mais dicas sustentáveis</a>
+        </div>
+    </div>
+
+    <!-- práticas ecológicas simples do dia a dia (cards interativos) -->
+    <div class="citacao">
+        <i class="fas fa-quote-left"></i> A sustentabilidade não é um ato solitário, é uma corrente de pequenas revoluções diárias. <i class="fas fa-quote-right"></i>
+        <div style="font-size: 0.8rem; margin-top: 8px;">— Roda da Vida</div>
+    </div>
+
+    <div style="margin: 1.5rem 0 0.5rem;">
+        <div class="titulo-carinhoso">
+            <i class="fas fa-check-circle"></i>
+            <span>5 práticas ecológicas simples para começar hoje</span>
+        </div>
+        <div class="acoes-simples">
+            <div class="bloco-acao">🌿 Leve sua própria caneca para o café</div>
+            <div class="bloco-acao">📦 Recuse canudo e talheres descartáveis</div>
+            <div class="bloco-acao">🥕 Cultive temperos em vasinhos na cozinha</div>
+            <div class="bloco-acao">🔋 Recarregue pilhas e descarte em pontos ecológicos</div>
+        </div>
+        <div class="acoes-simples">
+            <div class="bloco-acao">📄 Use os dois lados do papel</div>
+            <div class="bloco-acao">🧽 Prefira panos de prato reutilizáveis ao invés de papel toalha</div>
+            <div class="bloco-acao">🚰 Leve sua garrafinha para academia e trabalho</div>
+        </div>
+    </div>
+
+    <!-- Por quê inspirar? Visão do projeto de forma mais humana e engajadora -->
+    <div style="background: #f7fcf2; border-radius: 1.8rem; padding: 1.6rem; margin: 1.8rem 0;">
+        <div class="titulo-carinhoso" style="margin-bottom: 0.5rem;">
+            <i class="fas fa-hands-helping"></i>
+            <span>O futuro que a gente planta agora</span>
+        </div>
+        <p>🌎 <strong>Educação ambiental acessível</strong> é a chave para transformar hábitos. Acreditamos que dicas curtas, linguagem simples e afeto despertam a consciência. Cada gesto eco-friendly — por menor que pareça — reduz a pegada ecológica e inspira outras pessoas. Fazemos parte de um grupo de 5 pessoas apaixonadas pelo planeta, mas você também é protagonista. Juntos, podemos cuidar do mundo que vivemos e deixar um legado verde para as gerações futuras.</p>
+        <p style="margin-top: 0.6rem; font-weight: 500;">💚 Onde tudo acontece? Em casa, na faculdade, nos grupos do WhatsApp e nas redes sociais. A mudança começa aí, com você.</p>
+    </div>
+
+        <div style="background: #e7f2df; border-radius: 1.5rem; padding: 1rem 1.4rem; text-align: center;">
+            <i class="fas fa-share-alt" style="font-size: 1.6rem; color: #2f6b2f;"></i>
+            <h3 style="font-size: 1.2rem;">🌱 Compartilhe</h3>
+            <p>Repasse as dicas nos grupos de WhatsApp e redes. Sustentabilidade se multiplica.</p>
+        </div>
+    </div>
+
+    <!-- rodapé final inspirador -->
+    <div class="footer-verde">
+        <i class="fas fa-seedling"></i> Roda da Vida · Textos curtos sobre sustentabilidade, consumo consciente e práticas ecológicas
+        <div style="margin: 0.5rem 0;">✨ Pequenas atitudes · Grandes impactos positivos ✨</div>
+        <div><i class="fab fa-whatsapp"></i> Compartilhe essa ideia verde | <i class="fab fa-instagram"></i> Inspire mais pessoas</div>
+        <div style="font-size: 0.7rem; margin-top: 0.7rem;">🌎 Cuide do mundo que você vive — ele é a casa de quem você ama e das futuras gerações.</div>
+    </div>
+</div>
+
+<!-- pequeno script para simular um toque interativo de dica (apenas sensação amigável, nada técnico) -->
+<script>
+    const botaoDicas = document.getElementById('btnDicaExtra');
+    if(botaoDicas) {
+        botaoDicas.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("🌿✨ Mais amor pelo planeta:\n\n• Reutilize potes de vidro para organizar mantimentos.\n• Plante uma árvore ou cuide de uma mudinha.\n• Leve sempre sua sacola retornável ao mercado.\n\nJuntos somos a mudança que o planeta precisa!");
+        });
+    }
+    // apenas para dar um toque de suavidade, mostrando mais dicas aleatórias
+    const cardsDica = document.querySelectorAll('.card-dica');
+    cardsDica.forEach(card => {
+        card.addEventListener('click', () => {
+            // apenas um pequeno feedback simpático
+            console.log('Dica verde explorada :)');
+        });
+    });
+</script>
+</body>
+</html>
